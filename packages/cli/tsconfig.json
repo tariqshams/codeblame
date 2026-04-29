@@ -1,0 +1,9 @@
+{
+  "extends": "@codeblame/tsconfig/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "jsx": "react"
+  },
+  "include": ["src"]
+}

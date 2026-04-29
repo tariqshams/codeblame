@@ -1,0 +1,25 @@
+{
+  "name": "codeblame",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "codeblame": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "@codeblame/core": "workspace:*",
+    "@codeblame/db": "workspace:*",
+    "ink": "^4.1.0",
+    "react": "^18.2.0",
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@codeblame/tsconfig": "workspace:*",
+    "@types/react": "^18.2.0",
+    "@types/node": "^20.0.0",
+    "typescript": "latest"
+  }
+}

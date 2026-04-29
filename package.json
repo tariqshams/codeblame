@@ -1,0 +1,15 @@
+{
+  "name": "codeblame-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.39",
+    "turbo": "latest",
+    "typescript": "latest"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@codeblame/db",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.6.0"
+  },
+  "devDependencies": {
+    "@codeblame/tsconfig": "workspace:*",
+    "@types/node": "^20.0.0",
+    "typescript": "latest"
+  }
+}
