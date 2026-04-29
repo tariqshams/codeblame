@@ -41,12 +41,16 @@ export async function processPostCommit(repoRoot: string) {
     try {
       const data = JSON.parse(fs.readFileSync(stagingPath, 'utf-8'));
       reasoning = data.reasoning || reasoning;
-      agent = data.agent || agent;
+      agent = data.agent || 'AI Agent';
       
+      console.log(`[Codeblame] Captured reasoning from ${agent}`);
       fs.unlinkSync(stagingPath);
     } catch (e) {
-      console.error('Failed to parse staging.json:', e);
+      console.error('[Codeblame] Failed to parse staging.json:', e);
     }
+  } else {
+    // Subtle hint for users who might expect AI context
+    // console.log('[Codeblame] No staging.json found, defaulting to Human.');
   }
 
   const db = new DBClient(dbPath);

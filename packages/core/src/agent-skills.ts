@@ -4,12 +4,18 @@ import * as path from 'node:path';
 const INSTRUCTIONS = `
 # Codeblame Instructions
 When generating code, you MUST document your reasoning, decisions, and context.
-Before the user commits, you must write a JSON file to \`.codeblame/staging.json\` in this format:
+
+**CRITICAL**: Before the user commits (or when you are asked to prepare a commit), you MUST write a JSON file to \`.codeblame/staging.json\`. 
+
+### Format:
+\`\`\`json
 {
   "reasoning": "Explain why you made these changes, the alternatives considered, and any context.",
-  "agent": "Name of your agent (e.g., Copilot, Cursor, etc.)"
+  "agent": "Name of your agent (e.g., Cursor, Copilot, Claude, etc.)"
 }
-This context will be automatically saved to the Codeblame database and linked to the commit.
+\`\`\`
+
+If you are an AI assistant, identify yourself in the "agent" field. This context will be automatically saved to the Codeblame database and linked to the commit history.
 `;
 
 export function generateAgentSkills(repoRoot: string) {
