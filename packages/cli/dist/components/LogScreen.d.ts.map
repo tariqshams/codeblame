@@ -1,1 +1,0 @@
-{"version":3,"file":"LogScreen.d.ts","sourceRoot":"","sources":["../../src/components/LogScreen.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAmB,MAAM,OAAO,CAAC;AAExC,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,eAAe,CAAC;AAEnD,eAAO,MAAM,SAAS,GAAI,cAAc;IAAE,QAAQ,EAAE,aAAa,EAAE,CAAA;CAAE,sBAgEpE,CAAC"}

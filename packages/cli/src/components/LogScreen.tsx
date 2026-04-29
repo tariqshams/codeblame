@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Text, useInput } from 'ink';
+import { Box, Text, useInput, useApp } from 'ink';
 import type { CommitContext } from '@codeblame/db';
 
 export const LogScreen = ({ contexts }: { contexts: CommitContext[] }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const { exit } = useApp();
 
   useInput((input, key) => {
     if (key.upArrow) {
@@ -11,6 +13,9 @@ export const LogScreen = ({ contexts }: { contexts: CommitContext[] }) => {
     }
     if (key.downArrow) {
       setSelectedIndex(Math.min(contexts.length - 1, selectedIndex + 1));
+    }
+    if (input === 'q' || key.escape) {
+      exit();
     }
   });
 
