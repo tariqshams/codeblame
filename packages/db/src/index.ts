@@ -12,9 +12,8 @@ export class DBClient {
   private client: Client;
 
   constructor(dbPath: string) {
-    this.client = createClient({
-      url: `file:${dbPath}`,
-    });
+    const url = dbPath.startsWith('/') ? `file://${dbPath}` : `file:${dbPath}`;
+    this.client = createClient({ url });
   }
 
   async initSchema() {

@@ -1,6 +1,6 @@
 {
   "name": "codeblame",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "bin": {
     "codeblame": "./dist/cli.js"

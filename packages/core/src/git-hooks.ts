@@ -18,8 +18,13 @@ export function installGitHook(repoRoot: string) {
 }
 
 export async function processPostCommit(repoRoot: string) {
-  const stagingPath = path.join(repoRoot, '.codeblame', 'staging.json');
-  const dbPath = path.join(repoRoot, '.codeblame', 'db.sqlite');
+  const codeblameDir = path.join(repoRoot, '.codeblame');
+  if (!fs.existsSync(codeblameDir)) {
+    fs.mkdirSync(codeblameDir, { recursive: true });
+  }
+
+  const stagingPath = path.join(codeblameDir, 'staging.json');
+  const dbPath = path.join(codeblameDir, 'db.sqlite');
   
   const git = simpleGit(repoRoot);
   const log = await git.log(['-1']);
